@@ -21,5 +21,8 @@ int main(int argc, char ** argv/*, char ** environ */) {
     setenv("foo", "bar", 1);
     assert(strcmp(getenv("foo"), "bar") == 0);
 
+    unsetenv("foo");
+    assert(getenv("foo") == NULL);
+
     exit(EXIT_SUCCESS);
 }
